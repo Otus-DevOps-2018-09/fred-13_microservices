@@ -3,3 +3,5 @@ yourname/ubuntu-tmp-file   latest              48c3186180c3        About a minut
 ubuntu                     16.04               4a689991aa24        4 weeks ago          116MB
 ubuntu                     latest              ea4c82dcd15a        4 weeks ago          85.8MB
 hello-world                latest              4ab4c602aa5e        2 months ago         1.84kB
+
+При запуске команд я увидел различие на выходе лишь в формате отображения ресурсов контейнера
