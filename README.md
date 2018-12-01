@@ -1,6 +1,48 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework14-----------------------
+
+1) Создана ветка docker-3
+2) Скачинвание и распаковка архива microservices.zip ( microservices > src )
+3) Создание докер файлов:
+
+   ./post-py/Dockerfile
+   ./comment/Dockerfile
+   ./ui/Dockerfile
+
+4) Скачивание последнего образа MongoDB и сборка образов с сервисами:
+
+   docker pull mongo:latest
+   docker build -t fred13/post:1.0 ./post-py
+   docker build -t fred13/comment:1.0 ./comment
+   docker build -t fred13/ui:1.0 ./ui
+
+5) Создание изолированной сети и запуск контейнеров в ней:
+
+   docker network create reddit
+   docker run -d --network=reddit --network-alias=post_db --network-alias=comment_db mongo:latest
+   docker run -d --network=reddit --network-alias=post fred13/post:1.0
+   docker run -d --network=reddit --network-alias=comment fred13/comment:1.0
+   docker run -d --network=reddit -p 9292:9292 fred13/ui:1.0
+
+6) Модификация содержимого ./ui/Dockerfile и пересборка контейнера ui, сравнение размеров:
+
+   REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+   fred13/ui           2.0                 16a06056cc20        30 minutes ago      447MB
+   fred13/ui           1.0                 8aa7c3bfc30e        4 hours ago         780MB
+   
+7) Перезапуск приложения с новым контейнером ui (2.0)
+8) В ходе выполнения пункта выше (7) потеряны данные, поэтому создадим Docker volume и подключим его к контейнеру mongo:latest:
+
+   docker volume create reddit_db
+   docker run -d --network=reddit --network-alias=post_db --network-alias=comment_db -v reddit_db:/data/db mongo:latest
+
+После перезапуска контейнеров посты остаются на месте
+
+------------------------------------------------------
+
+
 ---------------------Homework13-----------------------
 
 1) Создана ветка docker-2
@@ -33,7 +75,7 @@ fred-13 microservices repository
 
 11) Проверка этого образа как в GCP так и локально
 
------------------------------------------------------
+------------------------------------------------------
 
 
 ---------------------Homework12-----------------------
