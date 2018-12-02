@@ -3,7 +3,7 @@ fred-13 microservices repository
 
 ###---------------------Homework15-----------------------
 
-[![Build Status](https://api.travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=docker-4)]
+[![Build Status](https://api.travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
 
 1) Создана ветка docker-4
 2) Запуск контейнера с использованием none-драйвера из образа joffotron/docker-net-tools
