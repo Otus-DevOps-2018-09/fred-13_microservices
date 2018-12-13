@@ -1,6 +1,45 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework15-----------------------
+
+[![Build Status](https://api.travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка docker-4
+2) Запуск контейнера с использованием none-драйвера из образа joffotron/docker-net-tools
+3) Запуск контейнера в сетевом пространстве docker-хоста
+4) Создание bridge-сети reddit в docker и запуск проекта в этой сети:
+```
+docker network create reddit --driver bridge
+docker run -d --network=reddit mongo:latest
+docker run -d --network=reddit fred13/post:1.0
+docker run -d --network=reddit fred13/comment:1.0
+docker run -d --network=reddit -p 9292:9292 ferd13/ui:1.0
+```
+5) Перезапуск проекта с новым сетевым alias (post_db, post, comment) для устранения ошибки связи контейнеров
+6) Создание две docker-сети:
+```
+docker network create back_net --subnet=10.0.2.0/24
+docker network create front_net --subnet=10.0.1.0/24
+```
+7) Действие из п.6 поломало общение фронта с бэком, поэтому подключим контейнеры ко второй сети:
+```
+docker network connect front_net post
+docker network connect front_net comment
+```
+8) Просмотр iptables в docker-host
+9) Установка docker-compose и запуск проекта с помощью этого инструмента:
+```
+export USERNAME=fred13
+docker-compose up -d
+docker-compose ps
+```
+10) Выполнение заданий для самостоятельной работы
+11) Базвое имя проекта образуется по соотвествию директории из которой запускается docker-compose. Для того чтобы назвать по своему
+необходимо в файл .env задать свой COMPOSE_PROJECT_NAME
+
+------------------------------------------------------
+
 ---------------------Homework14-----------------------
 
 1) Создана ветка docker-3
