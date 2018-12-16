@@ -23,25 +23,25 @@ services:
       - back_net
 
   ui:
-    image: fred13/ui:${SERVICES_VERSION}
+    image: ${USERNAME}/ui:${SERVICES_VERSION}
     ports:
       - ${PORT_DST}:${PORT_DST}/tcp
     networks:
       - front_net
 
   post:
-    image: fred13/post:${SERVICES_VERSION}
+    image: ${USERNAME}/post:${SERVICES_VERSION}
     networks:
       - back_net
       - front_net
   comment:
-    image: fred13/comment:${SERVICES_VERSION}
+    image: ${USERNAME}/comment:${SERVICES_VERSION}
     networks:
       - back_net
       - front_net
 
   prometheus:
-    image: fred13/prometheus
+    image: ${USERNAME}/prometheus
     ports:
       - '9090:9090'
     volumes:
