@@ -1,6 +1,23 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+
+
+---------------------Homework16-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=gitlab-ci-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка gitlab-ci-1
+2) Создана ВМ в GCP по требуемым параметрам
+3) Установлен docker и docker-compose на ВМ
+4) Запущен Gitlab CI в docker с помощью готового образа
+4) Настроена группа и проект в Gitlab
+5) Определение CI/CD Pipeline с помощью описания процесса в .gitlab-ci.yml
+6) Регистрация и запуск Runner
+7) Добавление тестирования приложения reddit в pipeline
+
+------------------------------------------------------
+
 ---------------------Homework15-----------------------
 
 [![Build Status](https://api.travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
