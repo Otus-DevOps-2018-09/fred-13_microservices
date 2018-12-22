@@ -1,6 +1,50 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework18-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=monitoring-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка monitoring-1
+2) Создал правило фаервола для Prometheus и Puma:
+```
+$ gcloud compute firewall-rules create prometheus-default --allow tcp:9090
+$ gcloud compute firewall-rules create puma-default --allow tcp:9292
+```
+3) Создал Docker хост в GCE
+```
+docker-machine create --driver google \
+    --google-machine-image https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts \
+    --google-machine-type n1-standard-1 \
+    --google-zone europe-west1-b \
+    docker-host
+```
+4) Загрузил готовый образ и запустил prometheus (знакомство с веб интерфейсом):
+```
+docker run --rm -p 9090:9090 -d --name prometheus prom/prometheus:v2.1.0
+```
+5) Создал директорию monitoring/prometheus и в ней описал Dockerfile для prometheus:
+```
+FROM prom/prometheus:v2.1.0
+ADD prometheus.yml /etc/prometheus/
+```
+6) Создал файл prometheus.yml с описанием сбора метрик с наших микросервисов
+7) Пересоздан образ:
+```
+$ docker build -t $USER_NAME/prometheus .
+```
+8) Собрал образы при помощи скриптов docker_build.sh:
+```
+/src/ui      $ bash docker_build.sh
+/src/post-py $ bash docker_build.sh
+/src/comment $ bash docker_build.sh
+```
+9) Поднял сервисы и просмотрел мониторинг состояния микросервисов
+10) Подключил экспортер node-exporter описанием в docker/docker-compose.yml файле как сервис
+11) Запушил образы на DockerHub. [Ссылка на образы тут](https://hub.docker.com/u/fred13)
+
+------------------------------------------------------
+
 ---------------------Homework17-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=gitlab-ci-2)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
