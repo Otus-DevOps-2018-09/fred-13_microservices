@@ -1,7 +1,20 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework17-----------------------
 
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=gitlab-ci-2)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка gitlab-ci-2
+2) Поднят проект с прошлого ДЗ
+3) Создан новый проект example2 в GitLab
+4) Включил runner для этого проекта
+5) Создано DEV-окружение
+6) Определил два новых этапа stage и production как мануал
+7) Затегировал код для выкатки в staging и production
+8) Определил динамическое окружение
+
+------------------------------------------------------
 
 ---------------------Homework16-----------------------
 
