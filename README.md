@@ -1,6 +1,26 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework19-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=monitoring-2)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка monitoring-2
+2) Создал Docker хост в GCE (docker-host)
+3) Выделил в отдельный файл docker-compose-monitoring.yml описание мониторинга
+4) Добавил новый сервис мониторинга cAdvisor в файл мониторинга
+5) Открыл порт 8080 для cAdvisor во вне на GCP (firewall)
+6) Пересобрал образ Prometheus
+7) Запустил проект и проверил сбор метрик
+8) Для визуализации данных из Prometheus добавил новый сервис grafana
+9) Создал дашборд путем импорта готового решения с оф.сайта (DockerMonitoring.json)
+10) Добавил информацию о post сервисе в конфигурацию Prometheus для сбора метрик с этого сервиса
+11) Создал два дашборда в grafana по сборам метрик (UI_Service_Monitoring, Business_Logic_Monitoring)
+12) Собрал образ alertmanager и настроил алертинг в канал в slack (проверка: [FIRING:1] InstanceDown (post:5000 post page))
+13) Запушил все собранные docker образы в DockerHub. [Ссылка на образы тут](https://hub.docker.com/u/fred13)
+
+------------------------------------------------------
+
 ---------------------Homework18-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=monitoring-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
