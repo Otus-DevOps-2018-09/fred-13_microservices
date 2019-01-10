@@ -28,5 +28,7 @@ services:
       - front_net
 
 networks:
-  back_net:
   front_net:
+    name: front_net
+  back_net:
+    name: front_net
