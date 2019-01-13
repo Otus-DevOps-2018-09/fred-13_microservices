@@ -1,6 +1,33 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework20-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=logging-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка logging-1
+2) Собраны образы ui, post и comment при помощи скриптов docker_build.sh
+3) Создан Docker хост в GCP
+4) Создан отдельный compose-файл docker-compose-logging.yml для нашей системы логирования
+5) Собран docker image для fluentd
+6) Просмотр логов post сервиса путем:
+```
+docker-compose logs -f post
+```
+7) Запуск системы лоигрования путем:
+```
+$ docker-compose -f docker-compose-logging.yml up -d
+$ docker-compose down
+$ docker-compose up -d
+```
+8) Изучение инструмента Kibana для визуализации и анализа логов
+9) Настройка фильтров и парсинга (fluentd)
+10) Описание compose-файла docker-compose-logging.yml для сервисов логирования распределенного трейсинга Zipkin
+11) Изучение инструмента Zipkin
+
+------------------------------------------------------
+
+
 ---------------------Homework19-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=monitoring-2)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
