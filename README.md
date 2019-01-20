@@ -1,6 +1,16 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework21-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка kubernetes-1
+2) Описание Deployment файлов reddit сервисов в директории kubernetes/reddit
+3) Проделана работа по туториалу от инженера из Google - Kelsey Hightower
+
+------------------------------------------------------
+
 ---------------------Homework20-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=logging-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
