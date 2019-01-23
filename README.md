@@ -1,6 +1,25 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework22-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-2)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка kubernetes-2
+2) Установлены: утилита kubectl и локальный гипервизор Minikube
+3) Описание сервисов ui, comment, post, mongodb в блоке deployment
+4) Запуск данных сервисов в Minikube (вывод сервиса ui путем port-forward)
+5) Для взаимодействия сервисов друг с другом описываем новые объекты Service
+6) Открываем доступ из вне с помощью NodePort
+7) Изучение основных возможностей в Minikube (Namespace, Dashboard)
+8) Сборка кластера в GKE
+9) Запуск приложения reddit (namespace dev) в GKE
+10) Активация и доступ к kubernetes-dashboard в GKE
+
+------------------------------------------------------
+
+
+
 ---------------------Homework21-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-1)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
