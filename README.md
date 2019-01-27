@@ -1,6 +1,19 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework23-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-3)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка kubernetes-3
+2) Определение сетевого взаимодействия с помощью Service (kube-dns, kubenet, nodePort, LoadBalancer, Ingress)
+3) Защита сервиса с помощью TLS (TLS Termination)
+4) Работа с Network Policy в GKE (определение доступов между сервисами)
+5) Работа с хранилищем для базы данных в GCE - reddit-mongo-disk
+
+------------------------------------------------------
+
+
 ---------------------Homework22-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-2)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
