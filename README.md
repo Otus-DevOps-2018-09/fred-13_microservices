@@ -1,6 +1,25 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework24-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-4)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка kubernetes-3
+2) Установка клиент-серверного приложения Helm и его серверную часть Tiller для подключения по API к Kubernetes
+3) Создание пакетов Chart для каждого сервиса и описание в них Templates
+4) Шаблонизация сущностей сервисов (name, release и т.д.)
+5) Описание шаблонов в виде функций в Helper (_helpers.tpl)
+6) Созданрие единого механизма управления зависимостями Chart reddit
+7) Установка GitLab с с помощью Helm Chart из пакета Omnibus
+8) Создание группы и проектов в них (post, ui, comment, reddit-deploy)
+9) Настройка CI. Проверка работы Pipeline
+10) Создание отдельного окружение в Kubernetes по коммиту в feature-бранч
+11) Создание staging и production среды для работы приложения
+
+------------------------------------------------------
+
+
 ---------------------Homework23-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-3)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
