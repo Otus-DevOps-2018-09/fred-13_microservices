@@ -1,36 +1,23 @@
 apiVersion: v1
-kind: ConfigMap
+kind: PersistentVolumeClaim
 metadata:
-  name: {{ template "fullname" . }}-config
+  name: {{ template "fullname" . }}-config-storage
   labels:
     app: {{ template "fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
-data:
-  external_scheme: http
-  external_hostname: {{ template "fullname" . }}
-  registry_external_scheme: https
-  registry_external_hostname: registry.{{ .Values.baseDomain }}
-  mattermost_external_scheme: https
-  mattermost_external_hostname: mattermost.{{ .Values.baseDomain }}
-  mattermost_app_uid: {{ .Values.mattermostAppUID }}
-  postgres_user: gitlab
-  postgres_db: gitlab_production
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: {{ template "fullname" . }}-secrets
-  labels:
-    app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
-data:
-  postgres_password: {{ .Values.postgresPassword }}
-  initial_shared_runners_registration_token: {{ default "" .Values.initialSharedRunnersRegistrationToken | b64enc | quote }}
-  mattermost_app_secret: {{ .Values.mattermostAppSecret | b64enc | quote }}
-{{- if .Values.gitlabEELicense }}
-  gitlab_ee_license: {{ .Values.gitlabEELicense | b64enc | quote }}
-{{- end }}
+  annotations:
+  {{- if .Values.gitlabConfigStorageClass }}
+    volume.beta.kubernetes.io/storage-class: {{ .Values.gitlabConfigStorageClass | quote }}
+  {{- else if (eq .Values.provider "gke") }}
+    volume.beta.kubernetes.io/storage-class: {{ template "fullname" . }}-fast
+  {{- else }}
+    volume.alpha.kubernetes.io/storage-class: default
+  {{- end }}
+spec:
+  accessModes:
+    - {{ default "ReadWriteOnce" .Values.gitlabConfigAccessMode | quote }}
+  resources:
+    requests:
+      storage: {{ default "1Gi" .Values.gitlabConfigStorageSize }}
