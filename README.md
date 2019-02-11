@@ -1,11 +1,33 @@
 # fred-13_microservices
 fred-13 microservices repository
 
+---------------------Homework25-----------------------
+
+[![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-5)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
+
+1) Создана ветка kubernetes-5
+2) Развернут кластер k8s
+3) Из Helm-чарта установлен ingress-контроллер nginx (EXTERNAL-IP добавлен в /etc/hosts)
+4) Загружен локально и установлен из кастомного файла Prometheus
+5) Исследование Targets на наличие ряда endpoint для сбора метрик
+6) Проверка сбора метрик
+7) Выполнение задания с включением метрик для node-exporter
+8) Сбор метрик с приложения (разбивка конфигурации на job-ы post-endpoints, comment-endpoints, ui-endpoints)
+9) Установка grafana с помощью helm
+10) Визуализация дашбордов с помощью готовых шаблонов (Kubernetes cluster monitoring, Kubernetes Deployment metrics)
+11) Настройка своих дашбордов в Grafana с механизма templating
+12) Создание файлов деплоя в директории kubernetes/efk/ (fluentd-ds.yaml,fluentd-configmap.yaml,es-service.yaml,es-statefulSet.yaml,es-pvc.yaml)
+13) Установка Kibana из helm чарта
+14) Создание шаблона индекса и поиск логов во вкладке Discover
+
+------------------------------------------------------
+
+
 ---------------------Homework24-----------------------
 
 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices.svg?branch=kubernetes-4)](https://travis-ci.com/Otus-DevOps-2018-09/fred-13_microservices)
 
-1) Создана ветка kubernetes-3
+1) Создана ветка kubernetes-4
 2) Установка клиент-серверного приложения Helm и его серверную часть Tiller для подключения по API к Kubernetes
 3) Создание пакетов Chart для каждого сервиса и описание в них Templates
 4) Шаблонизация сущностей сервисов (name, release и т.д.)
